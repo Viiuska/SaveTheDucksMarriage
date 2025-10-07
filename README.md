@@ -9,15 +9,15 @@ Github:[webpohjan github linkki tähän](https://github.com/Viiuska/SaveTheDucks
 
 ## Gameplay
 Listen to Honey duck and collect the required items. Beware of enemies.
-Move:
-* Arrow keys (left and right)
-* A and D keys (left and right)
-Jump:
-* W
-* Space
-* Arrow up
-Buttons:
-* Mouse
+Move:  
+* Arrow keys (left and right)  
+* A and D keys (left and right)  
+Jump:  
+* W  
+* Space  
+* Arrow up  
+Buttons:  
+* Mouse  
 
 ## Development details
 Game engine: Godot 4.4  
