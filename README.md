@@ -26,10 +26,17 @@ Game engine: Godot 4.4
 Language: GDScript  
 Desktop  
 
-## Run locally
+## Run locally  
+Godot 4.4
 git clone https://github.com/Viiuska/SaveTheDucksMarriage.git  
 cd SaveTheDucksMarriage  
 Open project in Godot 4.4 and run  
+
+Windows
+Download  
+Navigate: WindowsDesktopBuild and double click Save the Duck's Marriage.exe to run the game
+
+
 
 
 ## Credits
