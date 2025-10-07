@@ -32,9 +32,8 @@ git clone https://github.com/Viiuska/SaveTheDucksMarriage.git
 cd SaveTheDucksMarriage  
 Open project in Godot 4.4 and run  
 
-Windows
-Download  
-Navigate: WindowsDesktopBuild and double click Save the Duck's Marriage.exe to run the game
+Windows  
+Download WindowsDesktopBuild folder and double click Save the Duck's Marriage.exe to run the game
 
 
 
