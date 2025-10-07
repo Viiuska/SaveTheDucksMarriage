@@ -24,7 +24,7 @@ Buttons:
 ## Development details
 Game engine: Godot 4.4  
 Language: GDScript  
-
+Desktop  
 
 ## Run locally
 git clone https://github.com/Viiuska/SaveTheDucksMarriage.git  
