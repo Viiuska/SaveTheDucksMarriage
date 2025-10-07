@@ -1,0 +1,144 @@
+[gd_scene load_steps=25 format=3 uid="uid://dgvn87ckxslog"]
+
+[ext_resource type="Script" uid="uid://cg0oulmutmb8o" path="res://Scripts/second_scene.gd" id="1_wd0yb"]
+[ext_resource type="Texture2D" uid="uid://bcya4xk2rsjpk" path="res://Sprites/Backgrounds/CutScenes/first_scene_00.png" id="2_kx53s"]
+[ext_resource type="Texture2D" uid="uid://c53bxxt5pkbfy" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_01.png" id="3_wcxou"]
+[ext_resource type="Texture2D" uid="uid://ddfkx7wyuc2db" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_02.png" id="4_rifak"]
+[ext_resource type="Texture2D" uid="uid://p0gyxinncvrr" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_03.png" id="5_ohudq"]
+[ext_resource type="Texture2D" uid="uid://df5bqi0ppp14f" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_04.png" id="6_wig48"]
+[ext_resource type="Texture2D" uid="uid://cnb6cbllcir3v" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_05.png" id="7_cj5sp"]
+[ext_resource type="Texture2D" uid="uid://bxpgp74q4n2ue" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_06.png" id="8_a6ohb"]
+[ext_resource type="Texture2D" uid="uid://bn2txgweu71a1" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_07.png" id="9_yqu0l"]
+[ext_resource type="Texture2D" uid="uid://dh5s456vyukwn" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_08.png" id="10_m6acv"]
+[ext_resource type="Texture2D" uid="uid://crtnxd1sguuvo" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_09.png" id="11_4jhdm"]
+[ext_resource type="Texture2D" uid="uid://ddlk3e16es2mv" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_10.png" id="12_mnb0o"]
+[ext_resource type="Texture2D" uid="uid://b4lipiyeiw67m" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_11.png" id="13_338sq"]
+[ext_resource type="Texture2D" uid="uid://db82qwe4heixa" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_12.png" id="14_dfgry"]
+[ext_resource type="Texture2D" uid="uid://b5lkumcbum3ym" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_13.png" id="15_rwb8q"]
+[ext_resource type="Texture2D" uid="uid://dfwyfoq6xysmm" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_14.png" id="16_5qjup"]
+[ext_resource type="Texture2D" uid="uid://buj8wj0h022on" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_15.png" id="17_p2vuw"]
+[ext_resource type="Texture2D" uid="uid://dym2crafogryw" path="res://Sprites/Backgrounds/CutScenes/secondCutScenes/second_scene_16.png" id="18_tu5hg"]
+
+[sub_resource type="Animation" id="Animation_rifak"]
+resource_name = "0_second_scene"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.13333, 12.1333, 18.0667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("15_rwb8q"), ExtResource("16_5qjup"), ExtResource("17_p2vuw"), ExtResource("18_tu5hg")]
+}
+
+[sub_resource type="Animation" id="Animation_wcxou"]
+resource_name = "1_second_scene"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.06667, 12.2667, 18.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("11_4jhdm"), ExtResource("12_mnb0o"), ExtResource("13_338sq"), ExtResource("14_dfgry")]
+}
+
+[sub_resource type="Animation" id="Animation_t4loi"]
+resource_name = "2_second_anim"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.93333, 12.0333, 18.1667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_cj5sp"), ExtResource("8_a6ohb"), ExtResource("9_yqu0l"), ExtResource("10_m6acv")]
+}
+
+[sub_resource type="Animation" id="Animation_ebtqm"]
+resource_name = "3_second_anim"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.93333, 12.1, 18.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_wcxou"), ExtResource("4_rifak"), ExtResource("5_ohudq"), ExtResource("6_wig48")]
+}
+
+[sub_resource type="Animation" id="Animation_ohudq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_kx53s")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wig48"]
+_data = {
+&"0_second_scene": SubResource("Animation_rifak"),
+&"1_second_scene": SubResource("Animation_wcxou"),
+&"2_second_anim": SubResource("Animation_t4loi"),
+&"3_second_anim": SubResource("Animation_ebtqm"),
+&"RESET": SubResource("Animation_ohudq")
+}
+
+[node name="Second_scene" type="Control" groups=["cutscene"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wd0yb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 1149.0
+offset_bottom = 646.0
+texture = ExtResource("2_kx53s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wig48")
+}
+
+[node name="SkipButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 56.0
+offset_bottom = 46.0
+scale = Vector2(2, 2)
+text = "Skip"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

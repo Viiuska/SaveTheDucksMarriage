@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://52ua8hrtclwj"]
+
+[ext_resource type="Script" uid="uid://ddhyo3e5anbgq" path="res://Scripts/credit_scene.gd" id="1_rrtdb"]
+[ext_resource type="Texture2D" uid="uid://dy8comcaltsaf" path="res://Sprites/Backgrounds/CutScenes/firstCutScenes/first_scene_01.png" id="2_ydqeh"]
+[ext_resource type="Texture2D" uid="uid://cy7h8hb5cxqc0" path="res://Sprites/Characters/honey_4.png" id="3_ydqeh"]
+[ext_resource type="Texture2D" uid="uid://t4s53cthpq5j" path="res://Sprites/Objects/tombstone.png" id="4_belgf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_23arn"]
+font_size = 48
+font_color = Color(0.760039, 0.278784, 0.29509, 1)
+outline_size = 5
+outline_color = Color(0.150635, 0.313048, 0.218511, 1)
+shadow_size = 5
+
+[node name="Dead_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rrtdb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.63, 0.63, 0.63, 1)
+layout_mode = 0
+offset_top = -31.0
+offset_right = 1149.0
+offset_bottom = 646.0
+texture = ExtResource("2_ydqeh")
+expand_mode = 2
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.0
+offset_top = -113.0
+offset_right = 309.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game over"
+label_settings = SubResource("LabelSettings_23arn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1137.0
+offset_top = 15.0
+offset_right = -1096.0
+offset_bottom = 46.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+text = "Exit"
+
+[node name="Honey4" type="Sprite2D" parent="."]
+position = Vector2(886, 363)
+scale = Vector2(10, 10)
+texture = ExtResource("3_ydqeh")
+
+[node name="Tombstone" type="Sprite2D" parent="."]
+position = Vector2(322, 372)
+scale = Vector2(10, 10)
+texture = ExtResource("4_belgf")
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_back_button_pressed"]

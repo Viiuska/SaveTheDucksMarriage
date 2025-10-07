@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=4 uid="uid://dv3l62bgahw77"]
+
+[ext_resource type="Script" uid="uid://dpkuc7735h4ey" path="res://Scripts/background_parallax.gd" id="1_l4wr6"]
+[ext_resource type="Texture2D" uid="uid://djxek1cis2k50" path="res://Sprites/Backgrounds/forest.png" id="2_5rvg2"]
+[ext_resource type="TileSet" uid="uid://6fblq1nssiv1" path="res://Sprites/Objects/new_tile_set.tres" id="3_jtv8s"]
+[ext_resource type="PackedScene" uid="uid://c8d84ydvpvoaj" path="res://Scenes/player.tscn" id="4_c81s1"]
+[ext_resource type="PackedScene" uid="uid://djd52er2hh8rr" path="res://Scenes/flower_y.tscn" id="5_n4vm5"]
+[ext_resource type="PackedScene" uid="uid://diwx28u6k3nbb" path="res://Scenes/enemy_foxes.tscn" id="6_fxnjf"]
+[ext_resource type="PackedScene" uid="uid://x6lkp80um7rr" path="res://Scenes/end_flag.tscn" id="7_xjeco"]
+[ext_resource type="PackedScene" uid="uid://b2oacark5adcq" path="res://Scenes/CutScenes/forth_scene.tscn" id="8_l4wr6"]
+[ext_resource type="AudioStream" uid="uid://mfj4cderlfxc" path="res://Audio/music.wav" id="9_ki8bc"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource("1_l4wr6")
+
+[node name="BackgroundSprite" type="Sprite2D" parent="Background"]
+scale = Vector2(0.8, 0.538)
+texture = ExtResource("2_5rvg2")
+
+[node name="BackgroundSprite2" type="Sprite2D" parent="Background"]
+position = Vector2(819, 0)
+scale = Vector2(0.8, 0.538)
+texture = ExtResource("2_5rvg2")
+
+[node name="BackgroundSprite5" type="Sprite2D" parent="Background"]
+position = Vector2(-819, 0)
+scale = Vector2(0.8, 0.538)
+texture = ExtResource("2_5rvg2")
+
+[node name="BackgroundSprite3" type="Sprite2D" parent="Background"]
+position = Vector2(1638, 0)
+scale = Vector2(0.8, 0.538)
+texture = ExtResource("2_5rvg2")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(1, 0)
+tile_map_data = PackedByteArray("AAD//wAAAAACAAAAAAAAAAAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAADAAAAAAD+/wAAAAACAAAAAAD9/wAAAAABAAAAAAAcAPz/AAABAAAAAAAdAPz/AAACAAAAAAAeAPz/AAACAAAAAAAfAPz/AAADAAAAAAAiAP7/AAAJAAIAAAAjAAEAAAAHAAMAAAAjAP7/AAAGAAMAAAAjAP//AAAHAAMAAAAjAAAAAAAHAAQAAAAiAP3/AAAJAAAAAAAjAP3/AAAKAAAAAAAkAP3/AAAKAAAAAAAlAP3/AAAKAAAAAAAlAP7/AAAKAAIAAAAkAP7/AAAKAAIAAAAjAPz/AAAJAAAAAAAkAPz/AAALAAAAAAAmAP3/AAALAAAAAAAmAP7/AAALAAIAAAAMAAEAAAAHAAYAAAAOAAEAAAAHAAUAAAAPAP//AAAIAAYAABANAAEAAAAIAAYAAAANAAQAAAABAAAAAAAOAP//AAAIAAUAABAOAAAAAAAIAAUAABAOAAIAAAAHAAQAAAAOAAMAAAAGAAUAAAAOAAQAAAACAAAAAAAPAAQAAAADAAAAAAAQAP//AAAHAAYAABAEAAIAAAABAAAAAAAFAAIAAAADAAAAAAAKAAIAAAADAAAAAAAJAAIAAAACAAAAAAAIAAIAAAABAAAAAAAOAP7/AAAHAAQAAAAUAPz/AAABAAAAAAAVAPz/AAACAAAAAAAWAPz/AAACAAAAAAAXAPz/AAACAAAAAAAYAPz/AAACAAAAAAAZAPz/AAADAAAAAAAoAAIAAAABAAAAAAApAAIAAAACAAAAAAAqAAIAAAADAAAAAABdAAAAAAABAAAAAABeAAAAAAACAAAAAABfAAAAAAACAAAAAABgAAAAAAACAAAAAABhAAAAAAACAAAAAABiAAAAAAACAAAAAABjAAAAAAADAAAAAAAuAAEAAAABAAAAAAAvAAEAAAACAAAAAAAwAAEAAAADAAAAAAAzAAAAAAABAAAAAAA0AAAAAAACAAAAAAA1AAAAAAACAAAAAAA2AAAAAAACAAAAAAA3AAAAAAADAAAAAAA6AAIAAAABAAAAAAA7AAIAAAADAAAAAAA/AAYAAAAAAAAAAAA/AAUAAAAGAAUAAAA/AAQAAAAHAAQAAAA/AAMAAAAGAAMAAAA+AAMAAAAJAAIAAAA+AAIAAAAJAAAAAAA/AAIAAAAKAAAAAABAAAIAAAAKAAAAAABBAAIAAAALAAAAAABBAAMAAAALAAIAAABAAAMAAAAKAAIAAABEAAEAAAABAAAAAABFAAEAAAADAAAAAABHAAMAAAAAAAAAAABJAAMAAAAAAAAAAABLAAMAAAAAAAAAAABNAAEAAAABAAAAAABOAAEAAAACAAAAAABQAAEAAAACAAAAAABPAAEAAAACAAAAAABRAAEAAAACAAAAAABWAAgAAAABAAAAAABXAAgAAAACAAAAAABYAAgAAAADAAAAAABXAAcAAAAGAAUAAABXAAYAAAAHAAUAABBXAAUAAAAIAAQAAABXAAQAAAAHAAUAAABWAAQAAAAIAAYAAABVAAQAAAAIAAYAAABUAAQAAAAHAAYAAABXAAMAAAAIAAQAAABXAAIAAAAHAAUAABBYAAIAAAAIAAYAABBZAAIAAAAHAAYAABBXAAEAAAAIAAQAAABXAAAAAAAHAAUAAABWAAAAAAAIAAYAAABVAAAAAAAHAAYAAABYAAYAAAAIAAYAABBZAAYAAAAHAAYAABBXAP//AAAIAAQAAABXAP7/AAAHAAUAABBYAP7/AAAIAAYAABBZAP7/AAAIAAYAABBaAP7/AAAHAAYAABBXAP3/AAAHAAQAAABXAPz/AAAHAAQAAABXAPv/AAAGAAMAAABWAPr/AAAKAAIAAABWAPv/AAAKAAIAAABVAPr/AAAJAAIAAABVAPv/AAAKAAIAAABYAPr/AAAKAAEAAABYAPv/AAAKAAIAAABZAPr/AAAKAAEAAABaAPn/AAANAAMAAABaAPr/AAALAAIAAABZAPf/AAAKAAAAAABaAPf/AAALAAAAAABaAPj/AAALAAEAAABYAPf/AAAKAAAAAABXAPf/AAAKAAAAAABWAPf/AAAKAAAAAABVAPf/AAAKAAAAAABUAPf/AAAKAAAAAABTAPf/AAAJAAAAAABTAPj/AAAJAAEAAABTAPn/AAAJAAEAAABTAPr/AAAJAAEAAABTAPv/AAAJAAIAAABUAPv/AAAKAAIAAABUAPr/AAAKAAEAAABUAPn/AAAKAAEAAABVAPn/AAAJAAEAAABVAPj/AAAJAAAAAABUAPj/AAAKAAEAAABWAPj/AAAKAAAAAABXAPj/AAALAAAAAABYAPj/AAAKAAEAAABZAPj/AAAKAAEAAABZAPn/AAAMAAMAAABYAPn/AAAKAAEAAABXAPn/AAALAAEAAABWAPn/AAAKAAEAAABXAPr/AAALAAIAAABbAPn/AAAOAAMAAAAOAPv/AAAHAAQAAAAOAPz/AAAHAAUAAAAMAPz/AAAHAAYAAAANAPz/AAAIAAYAAAAOAP3/AAAHAAQAAAALAPT/AAAOAAMAAAALAPX/AAAJAAEAAAALAPb/AAAJAAIAAAAMAPT/AAAKAAEAAAAMAPX/AAAKAAEAAAAMAPb/AAAKAAIAAAANAPT/AAAKAAEAAAANAPX/AAAKAAEAAAANAPb/AAAKAAIAAAAOAPT/AAAKAAEAAAAOAPX/AAAMAAMAAAAOAPb/AAAGAAMAAAAOAPf/AAAHAAQAAAAOAPj/AAAHAAQAAAAOAPn/AAAHAAUAABAPAPX/AAANAAMAAAAPAPb/AAALAAIAAAAJAPT/AAAMAAMAAAAKAPT/AAANAAMAAAALAPP/AAAJAAAAAAAMAPP/AAAKAAAAAAANAPP/AAAKAAAAAAAOAPP/AAALAAAAAAAPAPT/AAALAAAAAAAPAPn/AAAIAAYAABAQAPX/AAAOAAMAAAAQAPn/AAAIAAYAAAARAPn/AAAHAAYAABAOAPr/AAAHAAQAAAAqAP3/AAABAAAAAAArAP3/AAACAAAAAAAsAP3/AAADAAAAAABZAPv/AAALAAIAAABSAAEAAAADAAAAAAAjAAIAAAAHAAQAAAAjAAMAAAAGAAUAAAAjAAQAAAABAAAAAAAkAAQAAAACAAAAAAAlAAQAAAADAAAAAAA=")
+tile_set = ExtResource("3_jtv8s")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -121.0
+offset_top = -114.0
+offset_right = 65.0
+offset_bottom = -65.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Watch out for the foxes.
+They are deadly!"
+
+[node name="Player" parent="." instance=ExtResource("4_c81s1")]
+
+[node name="Flowers" type="Node" parent="."]
+
+[node name="FlowerY" parent="Flowers" instance=ExtResource("5_n4vm5")]
+position = Vector2(555, -78)
+
+[node name="FlowerY2" parent="Flowers" instance=ExtResource("5_n4vm5")]
+position = Vector2(237, -78)
+
+[node name="FlowerY3" parent="Flowers" instance=ExtResource("5_n4vm5")]
+position = Vector2(279, 65)
+
+[node name="FlowerY4" parent="Flowers" instance=ExtResource("5_n4vm5")]
+position = Vector2(658, 65)
+
+[node name="FlowerY5" parent="Flowers" instance=ExtResource("5_n4vm5")]
+position = Vector2(1559, 136)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="EnemyFoxes" parent="Enemies" instance=ExtResource("6_fxnjf")]
+position = Vector2(381, -86)
+scale = Vector2(1.5, 1.5)
+
+[node name="EnemyFoxes2" parent="Enemies" instance=ExtResource("6_fxnjf")]
+position = Vector2(939, -14)
+scale = Vector2(1.5, 1.5)
+move_speed = 30.0
+
+[node name="EnemyFoxes3" parent="Enemies" instance=ExtResource("6_fxnjf")]
+position = Vector2(1404, 4)
+scale = Vector2(1.5, 1.5)
+move_speed = 10.0
+
+[node name="EndFlag" parent="." instance=ExtResource("7_xjeco")]
+position = Vector2(1779, -7)
+scene_to_load = ExtResource("8_l4wr6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ki8bc")
+volume_db = -20.0
+autoplay = true

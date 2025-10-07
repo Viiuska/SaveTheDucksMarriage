@@ -1,0 +1,157 @@
+[gd_scene load_steps=19 format=3 uid="uid://dstiqtpada2xp"]
+
+[ext_resource type="Script" uid="uid://c6fbqa7ecke2p" path="res://Scripts/end_scene.gd" id="1_st52p"]
+[ext_resource type="Texture2D" uid="uid://d1efc2eg3fcs4" path="res://Sprites/Backgrounds/mainMenu.png" id="2_gk23h"]
+[ext_resource type="Texture2D" uid="uid://c1adesioeptnf" path="res://Sprites/Backgrounds/CutScenes/endCutScenes/6_4_1.png" id="4_puxmk"]
+[ext_resource type="Texture2D" uid="uid://cp045u0lcudq0" path="res://Sprites/Backgrounds/CutScenes/endCutScenes/6_4_2.png" id="5_v0akq"]
+[ext_resource type="Texture2D" uid="uid://do527mn8g73wd" path="res://Sprites/Backgrounds/CutScenes/endCutScenes/6_4_3.png" id="6_utdj7"]
+[ext_resource type="Texture2D" uid="uid://dicy0wogmxqx7" path="res://Sprites/Backgrounds/CutScenes/endCutScenes/6.png" id="7_fruxx"]
+[ext_resource type="Texture2D" uid="uid://3m14ty0mfkmj" path="res://Sprites/Backgrounds/CutScenes/endCutScenes/6_3_1.png" id="8_c1knh"]
+[ext_resource type="Texture2D" uid="uid://dqncjbok2kuxe" path="res://Sprites/Backgrounds/CutScenes/endCutScenes/6_2_1.png" id="9_nvt0k"]
+[ext_resource type="Texture2D" uid="uid://co8md6mm6bkst" path="res://Sprites/Backgrounds/CutScenes/endCutScenes/6_1.png" id="10_a5ima"]
+[ext_resource type="Texture2D" uid="uid://c2ssk6va7lu0k" path="res://Sprites/Backgrounds/CutScenes/endCutScenes/6_1_1.png" id="11_hhflt"]
+[ext_resource type="Texture2D" uid="uid://d00uw8fla6tfb" path="res://Sprites/Backgrounds/CutScenes/endCutScenes/6_1_2.png" id="12_7cvxk"]
+
+[sub_resource type="Animation" id="Animation_kxbua"]
+resource_name = "1_end_anim"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4, 10, 14.0333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_a5ima"), ExtResource("11_hhflt"), ExtResource("12_7cvxk"), ExtResource("7_fruxx")]
+}
+
+[sub_resource type="Animation" id="Animation_sr3sw"]
+resource_name = "2_end_anim"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.03333, 9.96667, 14.0667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_puxmk"), ExtResource("9_nvt0k"), ExtResource("6_utdj7"), ExtResource("7_fruxx")]
+}
+
+[sub_resource type="Animation" id="Animation_m2j6h"]
+resource_name = "3_end_anim"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.96667, 11.9333, 15.8333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_puxmk"), ExtResource("8_c1knh"), ExtResource("6_utdj7"), ExtResource("7_fruxx")]
+}
+
+[sub_resource type="Animation" id="Animation_gk23h"]
+resource_name = "4_end_anim"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.96667, 10.0333, 14.0667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_puxmk"), ExtResource("5_v0akq"), ExtResource("6_utdj7"), ExtResource("7_fruxx")]
+}
+
+[sub_resource type="Animation" id="Animation_2fa4l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_gk23h")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kdu3h"]
+_data = {
+&"1_end_anim": SubResource("Animation_kxbua"),
+&"2_end_anim": SubResource("Animation_sr3sw"),
+&"3_end_anim": SubResource("Animation_m2j6h"),
+&"4_end_anim": SubResource("Animation_gk23h"),
+&"RESET": SubResource("Animation_2fa4l")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_eh6ij"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="End_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_st52p")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -31.0
+offset_right = 1149.0
+offset_bottom = 646.0
+texture = ExtResource("2_gk23h")
+expand_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kdu3h")
+}
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 26.0
+offset_right = 418.0
+offset_bottom = 134.0
+text = "
+
+"
+label_settings = SubResource("LabelSettings_eh6ij")
+
+[node name="SkipButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1137.0
+offset_top = 15.0
+offset_right = -1096.0
+offset_bottom = 46.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+text = "Skip"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

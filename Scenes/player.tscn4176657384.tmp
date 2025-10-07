@@ -1,0 +1,140 @@
+[gd_scene load_steps=15 format=3 uid="uid://c8d84ydvpvoaj"]
+
+[ext_resource type="Script" uid="uid://4m5sjgfud552" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dgp0drawrslmm" path="res://Sprites/Characters/duck_1.png" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://sgf7iq7msfix" path="res://Sprites/Characters/duck_4.png" id="2_fkybt"]
+[ext_resource type="Texture2D" uid="uid://u3q8li0qcvpx" path="res://Sprites/Characters/duck_2.png" id="3_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://b7dicl5rjt4a3" path="res://Sprites/Characters/duck_3.png" id="4_3smsa"]
+[ext_resource type="Script" uid="uid://bpxwqldn21pv1" path="res://Scripts/player_ui.gd" id="6_3smsa"]
+[ext_resource type="Texture2D" uid="uid://clv20ailfxot5" path="res://Sprites/Objects/heart.png" id="6_x3wgy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
+height = 22.0
+
+[sub_resource type="Animation" id="Animation_gymyn"]
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_fkybt")]
+}
+
+[sub_resource type="Animation" id="Animation_tx1dd"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_v0iea")]
+}
+
+[sub_resource type="Animation" id="Animation_8erm5"]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_fkybt")]
+}
+
+[sub_resource type="Animation" id="Animation_f1ek2"]
+resource_name = "move"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_x3wgy"), ExtResource("4_3smsa")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pu2lt"]
+_data = {
+&"RESET": SubResource("Animation_gymyn"),
+&"idle": SubResource("Animation_tx1dd"),
+&"jump": SubResource("Animation_8erm5"),
+&"move": SubResource("Animation_f1ek2")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_x3wgy"]
+font_size = 24
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_cvnsp")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_fkybt")
+offset = Vector2(-1, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_cvnsp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -35)
+zoom = Vector2(2, 2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pu2lt")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("6_3smsa")
+
+[node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 9.0
+offset_right = 223.0
+offset_bottom = 40.0
+
+[node name="Heart" type="TextureRect" parent="CanvasLayer/HealthContainer"]
+layout_mode = 2
+texture = ExtResource("6_x3wgy")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="CanvasLayer/HealthContainer"]
+layout_mode = 2
+texture = ExtResource("6_x3wgy")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="CanvasLayer/HealthContainer"]
+layout_mode = 2
+texture = ExtResource("6_x3wgy")
+expand_mode = 2
+
+[node name="CollectedItems" type="Label" parent="CanvasLayer"]
+offset_left = 8.0
+offset_top = 34.0
+offset_right = 151.0
+offset_bottom = 68.0
+text = "Flowers: 100"
+label_settings = SubResource("LabelSettings_x3wgy")

@@ -1,0 +1,201 @@
+[gd_scene load_steps=21 format=3 uid="uid://c8d84ydvpvoaj"]
+
+[ext_resource type="Script" uid="uid://4m5sjgfud552" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dgp0drawrslmm" path="res://Sprites/Characters/duck_1.png" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://sgf7iq7msfix" path="res://Sprites/Characters/duck_4.png" id="2_fkybt"]
+[ext_resource type="Script" uid="uid://bb6f0glv5xuwu" path="res://Scripts/camera_shake.gd" id="3_8erm5"]
+[ext_resource type="Texture2D" uid="uid://u3q8li0qcvpx" path="res://Sprites/Characters/duck_2.png" id="3_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://b7dicl5rjt4a3" path="res://Sprites/Characters/duck_3.png" id="4_3smsa"]
+[ext_resource type="Script" uid="uid://bpxwqldn21pv1" path="res://Scripts/player_ui.gd" id="6_3smsa"]
+[ext_resource type="Texture2D" uid="uid://clv20ailfxot5" path="res://Sprites/Objects/heart.png" id="6_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://d0cd2sj1h0w5b" path="res://Sprites/Objects/flowerBlue.png" id="9_f1ek2"]
+[ext_resource type="Texture2D" uid="uid://crlm1tmwvwtry" path="res://Sprites/Objects/diamondPink.png" id="10_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://b718dl3ijshw8" path="res://Sprites/Objects/flowerYellow.png" id="11_gymyn"]
+[ext_resource type="Texture2D" uid="uid://cibkjsrx0j680" path="res://Sprites/Objects/flowerPink.png" id="11_ukyrk"]
+[ext_resource type="Texture2D" uid="uid://bvnxly6e03n4x" path="res://Sprites/Objects/diamondBlue.png" id="13_7dp3o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
+height = 22.0
+
+[sub_resource type="Animation" id="Animation_gymyn"]
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_fkybt")]
+}
+
+[sub_resource type="Animation" id="Animation_tx1dd"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_v0iea")]
+}
+
+[sub_resource type="Animation" id="Animation_8erm5"]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_fkybt")]
+}
+
+[sub_resource type="Animation" id="Animation_f1ek2"]
+resource_name = "move"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_x3wgy"), ExtResource("4_3smsa")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pu2lt"]
+_data = {
+&"RESET": SubResource("Animation_gymyn"),
+&"idle": SubResource("Animation_tx1dd"),
+&"jump": SubResource("Animation_8erm5"),
+&"move": SubResource("Animation_f1ek2")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_x3wgy"]
+font_size = 38
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_cvnsp")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_fkybt")
+offset = Vector2(-1, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_cvnsp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -35)
+zoom = Vector2(2, 2)
+script = ExtResource("3_8erm5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pu2lt")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("6_3smsa")
+
+[node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 9.0
+offset_right = 223.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+
+[node name="Heart" type="TextureRect" parent="CanvasLayer/HealthContainer"]
+layout_mode = 2
+texture = ExtResource("6_x3wgy")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="CanvasLayer/HealthContainer"]
+layout_mode = 2
+texture = ExtResource("6_x3wgy")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="CanvasLayer/HealthContainer"]
+layout_mode = 2
+texture = ExtResource("6_x3wgy")
+expand_mode = 2
+
+[node name="CollectedItems" type="Label" parent="CanvasLayer"]
+offset_left = 360.0
+offset_top = 11.0
+offset_right = 420.0
+offset_bottom = 64.0
+text = "/3"
+label_settings = SubResource("LabelSettings_x3wgy")
+
+[node name="CollectedItemsScore" type="Label" parent="CanvasLayer"]
+offset_left = 333.0
+offset_top = 10.0
+offset_right = 393.0
+offset_bottom = 63.0
+label_settings = SubResource("LabelSettings_x3wgy")
+
+[node name="CollectedItems2" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 602.0
+offset_top = 10.0
+offset_right = 662.0
+offset_bottom = 63.0
+label_settings = SubResource("LabelSettings_x3wgy")
+
+[node name="CollectedItemsScore2" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 575.0
+offset_top = 9.0
+offset_right = 635.0
+offset_bottom = 62.0
+label_settings = SubResource("LabelSettings_x3wgy")
+
+[node name="FlowerBlue" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(444, 39)
+scale = Vector2(3, 3)
+texture = ExtResource("9_f1ek2")
+
+[node name="FlowerYellow" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(446, 42)
+scale = Vector2(3, 3)
+texture = ExtResource("11_gymyn")
+
+[node name="FlowerPink" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(444, 37)
+scale = Vector2(3, 3)
+texture = ExtResource("11_ukyrk")
+
+[node name="DiamondPink" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(446, 44)
+scale = Vector2(3, 3)
+texture = ExtResource("10_tx1dd")
+
+[node name="DiamondBlue" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(675, 43)
+scale = Vector2(3, 3)
+texture = ExtResource("13_7dp3o")

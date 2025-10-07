@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bss0qeynyhgrx"]
+
+[ext_resource type="Script" uid="uid://b012ax3dh2neg" path="res://Scripts/flower_b.gd" id="1_jpcpe"]
+[ext_resource type="Texture2D" uid="uid://d0cd2sj1h0w5b" path="res://Sprites/Objects/flowerBlue.png" id="2_andmj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrdnt"]
+radius = 7.0
+
+[node name="FlowerB" type="Area2D"]
+script = ExtResource("1_jpcpe")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_andmj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xrdnt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

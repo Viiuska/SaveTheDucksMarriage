@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctw0osv116o2m"]
+
+[ext_resource type="Script" uid="uid://cos7kvcxnxero" path="res://Scripts/main_menu.gd" id="1_48xlc"]
+[ext_resource type="Texture2D" uid="uid://d1efc2eg3fcs4" path="res://Sprites/Backgrounds/mainMenu.png" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://dgp0drawrslmm" path="res://Sprites/Characters/duck_1.png" id="3_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://dyglif5pc8chx" path="res://Sprites/Characters/honey_1.png" id="4_ce3w2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_48xlc"]
+font_size = 48
+font_color = Color(0.760039, 0.278784, 0.29509, 1)
+outline_size = 5
+outline_color = Color(0.150635, 0.313048, 0.218511, 1)
+shadow_size = 5
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48xlc")
+
+[node name="Bakcground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -118.0
+offset_right = 1156.0
+offset_bottom = 925.0
+texture = ExtResource("2_48xlc")
+expand_mode = 2
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -287.5
+offset_top = -116.5
+offset_right = 295.5
+offset_bottom = -49.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Save the Duck's Marriage"
+label_settings = SubResource("LabelSettings_48xlc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -15.5
+offset_right = 29.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 38
+text = " Play "
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = 48.5
+offset_right = 53.5
+offset_bottom = 109.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 38
+text = " Quit "
+
+[node name="CreditButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 432.0
+offset_top = 251.0
+offset_right = 570.0
+offset_bottom = 312.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 38
+text = "Credits"
+
+[node name="Duck1" type="Sprite2D" parent="."]
+position = Vector2(150, 355)
+scale = Vector2(10, 10)
+texture = ExtResource("3_1ehe0")
+
+[node name="Honey1" type="Sprite2D" parent="."]
+position = Vector2(1005, 381)
+scale = Vector2(10, 10)
+texture = ExtResource("4_ce3w2")
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CreditButton" to="." method="_on_credit_button_pressed"]

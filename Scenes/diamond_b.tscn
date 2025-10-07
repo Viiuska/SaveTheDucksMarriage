@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://hqrmcbd4i631"]
+
+[ext_resource type="Script" uid="uid://b8ew4vegqwobu" path="res://Scripts/diamond_b.gd" id="1_cm4ia"]
+[ext_resource type="Texture2D" uid="uid://bvnxly6e03n4x" path="res://Sprites/Objects/diamondBlue.png" id="2_02ti0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1dsfa"]
+radius = 6.0
+
+[node name="DiamondB" type="Area2D"]
+script = ExtResource("1_cm4ia")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_02ti0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_1dsfa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

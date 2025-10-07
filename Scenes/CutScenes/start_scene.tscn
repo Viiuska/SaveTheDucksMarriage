@@ -1,0 +1,99 @@
+[gd_scene load_steps=11 format=3 uid="uid://141phvd0fq0m"]
+
+[ext_resource type="Script" uid="uid://cn5fdibnpxlwb" path="res://Scripts/start_scene.gd" id="1_k7oyi"]
+[ext_resource type="Texture2D" uid="uid://d1efc2eg3fcs4" path="res://Sprites/Backgrounds/mainMenu.png" id="3_lhd4k"]
+[ext_resource type="Texture2D" uid="uid://bysp2rk68jm7n" path="res://Sprites/Backgrounds/CutScenes/firstCutScenes/first_scene_02.png" id="4_q11eg"]
+[ext_resource type="Texture2D" uid="uid://hgx50hwtaslx" path="res://Sprites/Backgrounds/CutScenes/firstCutScenes/first_scene_03.png" id="5_j6gi7"]
+[ext_resource type="Texture2D" uid="uid://dx4ypmcluksgs" path="res://Sprites/Backgrounds/CutScenes/firstCutScenes/first_scene_04.png" id="6_irsb1"]
+[ext_resource type="Texture2D" uid="uid://bqhvrx7ripguo" path="res://Sprites/Backgrounds/CutScenes/firstCutScenes/first_scene_05.png" id="7_oefgi"]
+
+[sub_resource type="Animation" id="Animation_2fa4l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_lhd4k")]
+}
+
+[sub_resource type="Animation" id="Animation_eh6ij"]
+resource_name = "first_scene"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667, 5.03333, 14.0333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_q11eg"), ExtResource("5_j6gi7"), ExtResource("6_irsb1"), ExtResource("7_oefgi")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kdu3h"]
+_data = {
+&"RESET": SubResource("Animation_2fa4l"),
+&"first_scene": SubResource("Animation_eh6ij")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_eh6ij"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="Start_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k7oyi")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -31.0
+offset_right = 1149.0
+offset_bottom = 646.0
+texture = ExtResource("3_lhd4k")
+expand_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kdu3h")
+}
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 21.0
+offset_top = 500.0
+offset_right = 509.0
+offset_bottom = 608.0
+text = "Duck:
+Of course, my love. I will bring you three          .
+"
+label_settings = SubResource("LabelSettings_eh6ij")
+
+[node name="SkipButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1137.0
+offset_top = 15.0
+offset_right = -1096.0
+offset_bottom = 46.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+text = "Skip"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

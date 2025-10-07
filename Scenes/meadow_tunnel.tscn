@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcsd3afgw1sx1"]
+
+[ext_resource type="Script" uid="uid://covyggmpcx110" path="res://Scripts/meadow_tunnel.gd" id="1_ijgbg"]
+[ext_resource type="Texture2D" uid="uid://by274tcchgw0j" path="res://Sprites/Backgrounds/tunnel.png" id="2_yyfi3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0mqh"]
+size = Vector2(20, 22)
+
+[node name="Tunnel" type="Area2D"]
+script = ExtResource("1_ijgbg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("2_yyfi3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_x0mqh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
