@@ -4,18 +4,20 @@ Save the Duck’s Marriage is a lighthearted 2D platformer game where a player h
 
 
 ### Play the game in online: [Save the Duck's Marriage Web](https://viiuska.github.io/SaveTheDucksMarriageWeb/)  
-Github: [](https://github.com/Viiuska/SaveTheDucksMarriageWeb)  
+Github: [SaveTheDucksMarriageWeb](https://github.com/Viiuska/SaveTheDucksMarriageWeb)  
 
 
 ## Gameplay
 Listen to Honey duck and collect the required items. Beware of enemies.  
 Move:  
 * Arrow keys (left and right)  
-* A and D keys (left and right)  
+* A and D keys (left and right)
+  
 Jump:  
 * W  
 * Space  
-* Arrow up  
+* Arrow up
+  
 Buttons:  
 * Mouse  
 
