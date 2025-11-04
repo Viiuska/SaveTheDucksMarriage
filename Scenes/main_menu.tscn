@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctw0osv116o2m"]
+[gd_scene load_steps=7 format=3 uid="uid://ctw0osv116o2m"]
 
 [ext_resource type="Script" uid="uid://cos7kvcxnxero" path="res://Scripts/main_menu.gd" id="1_48xlc"]
 [ext_resource type="Texture2D" uid="uid://d1efc2eg3fcs4" path="res://Sprites/Backgrounds/mainMenu.png" id="2_48xlc"]
 [ext_resource type="Texture2D" uid="uid://dgp0drawrslmm" path="res://Sprites/Characters/duck_1.png" id="3_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://dyglif5pc8chx" path="res://Sprites/Characters/honey_1.png" id="4_ce3w2"]
+[ext_resource type="AudioStream" uid="uid://ci7jyc0x21ujk" path="res://Audio/music_pond.wav" id="5_n45e2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_48xlc"]
 font_size = 48
@@ -105,6 +106,11 @@ texture = ExtResource("3_1ehe0")
 position = Vector2(1005, 381)
 scale = Vector2(10, 10)
 texture = ExtResource("4_ce3w2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_n45e2")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

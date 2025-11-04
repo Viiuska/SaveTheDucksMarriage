@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c8d84ydvpvoaj"]
+[gd_scene load_steps=22 format=3 uid="uid://c8d84ydvpvoaj"]
 
 [ext_resource type="Script" uid="uid://4m5sjgfud552" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dgp0drawrslmm" path="res://Sprites/Characters/duck_1.png" id="1_v0iea"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b718dl3ijshw8" path="res://Sprites/Objects/flowerYellow.png" id="11_gymyn"]
 [ext_resource type="Texture2D" uid="uid://cibkjsrx0j680" path="res://Sprites/Objects/flowerPink.png" id="11_ukyrk"]
 [ext_resource type="Texture2D" uid="uid://bvnxly6e03n4x" path="res://Sprites/Objects/diamondBlue.png" id="13_7dp3o"]
+[ext_resource type="AudioStream" uid="uid://ci7jyc0x21ujk" path="res://Audio/music_pond.wav" id="14_7dp3o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 height = 22.0
@@ -199,3 +200,8 @@ visible = false
 position = Vector2(675, 43)
 scale = Vector2(3, 3)
 texture = ExtResource("13_7dp3o")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_7dp3o")
+volume_db = -20.0
+autoplay = true

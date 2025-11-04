@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bu41xpfmfnqck"]
+[gd_scene load_steps=9 format=4 uid="uid://bu41xpfmfnqck"]
 
 [ext_resource type="Script" uid="uid://dpkuc7735h4ey" path="res://Scripts/background_parallax.gd" id="1_wrinw"]
 [ext_resource type="TileSet" uid="uid://6fblq1nssiv1" path="res://Sprites/Objects/new_tile_set.tres" id="2_7p6j4"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dgvn87ckxslog" path="res://Scenes/CutScenes/second_scene.tscn" id="8_wrinw"]
 [ext_resource type="PackedScene" uid="uid://x6lkp80um7rr" path="res://Scenes/end_flag.tscn" id="8_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://bhyt64pqn04l3" path="res://Scenes/enemy_frogs.tscn" id="9_uy8f0"]
-[ext_resource type="AudioStream" uid="uid://ci7jyc0x21ujk" path="res://Audio/music_pond.wav" id="12_uy8f0"]
 
 [node name="Main" type="Node2D"]
 
@@ -83,8 +82,3 @@ position = Vector2(1387, 26)
 [node name="EndFlag" parent="." instance=ExtResource("8_xrdnt")]
 position = Vector2(1661, -25)
 scene_to_load = ExtResource("8_wrinw")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_uy8f0")
-volume_db = -20.0
-autoplay = true

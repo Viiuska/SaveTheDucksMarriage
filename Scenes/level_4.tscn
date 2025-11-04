@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://34xwvjxcg8d8"]
+[gd_scene load_steps=16 format=4 uid="uid://34xwvjxcg8d8"]
 
 [ext_resource type="Script" uid="uid://dpkuc7735h4ey" path="res://Scripts/background_parallax.gd" id="1_b8ytw"]
 [ext_resource type="Texture2D" uid="uid://drbmcuh20djrl" path="res://Sprites/Backgrounds/pond.png" id="2_mbnb1"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://diwx28u6k3nbb" path="res://Scenes/enemy_foxes.tscn" id="13_sw1t4"]
 [ext_resource type="PackedScene" uid="uid://x6lkp80um7rr" path="res://Scenes/end_flag.tscn" id="14_6vef0"]
 [ext_resource type="PackedScene" uid="uid://qgga3njbjj8s" path="res://Scenes/CutScenes/final_scene.tscn" id="15_mbnb1"]
-[ext_resource type="AudioStream" uid="uid://ci7jyc0x21ujk" path="res://Audio/music_pond.wav" id="16_j11ov"]
 
 [node name="Main" type="Node2D"]
 
@@ -220,11 +219,6 @@ move_speed = 30.0
 [node name="EndFlag" parent="." instance=ExtResource("14_6vef0")]
 position = Vector2(6699, -25)
 scene_to_load = ExtResource("15_mbnb1")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("16_j11ov")
-volume_db = -20.0
-autoplay = true
 
 [node name="Label" type="Label" parent="."]
 offset_left = 1695.0

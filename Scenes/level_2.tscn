@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://17hcs8g2mc26"]
+[gd_scene load_steps=9 format=4 uid="uid://17hcs8g2mc26"]
 
 [ext_resource type="Script" uid="uid://dpkuc7735h4ey" path="res://Scripts/background_parallax.gd" id="1_42uki"]
 [ext_resource type="Texture2D" uid="uid://cl4gccs7s4ppd" path="res://Sprites/Backgrounds/meadow.png" id="2_42uki"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b6it5ln76bjke" path="res://Scenes/diamond_p.tscn" id="6_t7v2y"]
 [ext_resource type="PackedScene" uid="uid://7d2qe0ktrdxx" path="res://Scenes/CutScenes/third_scene.tscn" id="8_uhnj4"]
 [ext_resource type="PackedScene" uid="uid://bpllua23yek0a" path="res://Scenes/enemy_owls.tscn" id="8_yvrk7"]
-[ext_resource type="AudioStream" uid="uid://ci7jyc0x21ujk" path="res://Audio/music_pond.wav" id="9_ait6c"]
 [ext_resource type="PackedScene" uid="uid://x6lkp80um7rr" path="res://Scenes/end_flag.tscn" id="9_fhuy1"]
 
 [node name="Main" type="Node2D"]
@@ -102,8 +101,3 @@ position = Vector2(1331, 101)
 [node name="EndFlag" parent="." instance=ExtResource("9_fhuy1")]
 position = Vector2(1661, -25)
 scene_to_load = ExtResource("8_uhnj4")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_ait6c")
-volume_db = -20.0
-autoplay = true
